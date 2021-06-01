@@ -1,24 +1,109 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Bare Metal Forms and Helpers
 
-Things you may want to cover:
+> This is part of the Forms Project in The Odin Project’s Ruby on Rails Curriculum, which is also part of Microvese's Technical Curriculum. To make it, we followed [these tutorial instructions](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/forms).
 
-* Ruby version
+![screenshot]()
 
-* System dependencies
+This project was built in order to learn about forms with Ruby on Rails.
 
-* Configuration
+## Built With
 
-* Database creation
+- Ruby 3.0.0
+- Rails 6.1.3.2 (Ruby Gem)
+- Sqlite 1.4.2 (Ruby Gem)
 
-* Database initialization
+## Getting Started
 
-* How to run the test suite
+To get a local copy up and running, please follow these steps:
 
-* Services (job queues, cache servers, search engines, etc.)
+### Prerequisites
 
-* Deployment instructions
+For this project, the following environment should be previously installed on your machine:
 
-* ...
+- Ruby 3.0.0
+- Rails 6.1.3.2
+- Node 14.17.0
+- Yarn 1.22.10
+
+### Setup
+
+- Go to your terminal bash and, on any directory of your preference, run `git clone git@github.com:angelacuahutle/micro-reddit.git`
+- Next, run `cd micro-reddit` to go into the project root directory
+- Run `bundle install` to install all Ruby Gems this project requires
+
+### Install
+
+- Run `rails db:migrate` to migrate the databases needed to run this project
+- Run `rails console` to perform your own tests with your newly created database and their validations, as well! You'll be able to **C**reate, **R**ead, **U**pdate and **D**estroy any records from your tables: authors, posts, and comments. Here you have a simple summary with the most relevant features of each Table and their associations:
+
+  #### Authors
+
+      - username:string [unique, 4-12 chars, present]
+      - email:string [unique, present]
+      - password:string [6-16 chars, present]
+      - id:integer
+      - created_at:datetime
+      - updated_at:datetime
+
+      - *has_many posts*
+      - *has_many comments*
+
+  #### Posts
+
+      - title:string [unique, present]
+      - body:text [present]
+      - author_id:integer [present]
+      - id:integer
+      - created_at:datetime
+      - updated_at:datetime
+
+      - *belongs_to author*
+      - *has_many comments*
+
+  #### Comments
+
+      - body:text [present]
+      - author_id:integer [present]
+      - post_id:integer [present]
+      - id:integer
+      - created_at:datetime
+      - updated_at:datetime
+
+      - *belongs_to author*
+      - *belongs_to post*
+
+## Authors
+
+👤 **Angela Natalia Cuahutle**
+
+- GitHub: [@angelacuahutle](https://github.com/angelacuahutle/)
+- Twitter: [@AngelaCunaDev](https://twitter.com/AngelaCunaDev)
+- LinkedIn: [https://www.linkedin.com/in/angela-cuahutle-75228bab/](https://www.linkedin.com/in/angela-cuahutle-75228bab/)
+
+👤 **Ênio Neves de Souza**
+
+- GitHub: [@enionsouza](https://github.com/enionsouza)
+- Twitter: [@enionsouza](https://twitter.com/enionsouza)
+- LinkedIn: [https://www.linkedin.com/in/enio-neves-de-souza/](https://www.linkedin.com/in/enio-neves-de-souza/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/angelacuahutle/micro-reddit/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- [Microverse](https://www.microverse.org/)
+- [The Odin Project](https://www.theodinproject.com/)
+- [Rails Guides](https://guides.rubyonrails.org/index.html)
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
