@@ -6,7 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    # miss completion
+    if @user.save
+      redirect_to @user
+    else
+      # This line overrides the default rendering behavior, which
+      # would have been to render the "create" view.
+      render "new"
+    end
   end
 
   private
