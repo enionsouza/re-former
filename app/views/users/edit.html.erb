@@ -1,19 +1,19 @@
 <h1>New User<h1>
-<%= form_with model: @user do |form| %>
+
+<%= form_with(model: @user, url: user_path, method: "patch") do |form| %>
   <%= form.label :username, "Username:" %>
-  <%= form.text_field :username , placeholder: "John Doe"  %><br><br>
+  <%= form.text_field :username %><br><br>
   <%= form.label :email, "Email:" %>
-  <%= form.email_field :email , placeholder: "example@example.com" %><br><br>
+  <%= form.email_field :email %><br><br>
   <%= form.label :password, "Password:" %>
-  <%= form.password_field :password , placeholder: "******"  %><br><br>
+  <%= form.password_field :password %><br><br>
   <%= form.submit %>
 <% end %>
 
 
 
-<!--
-<h1>New User!<h1>
-<%= form_tag(users_path, method: "post") do %>
+<!--<h1>Edit user!<h1>
+<%= form_tag(edit_user_path, method: "get") do %>
   <%= label_tag(:username, "Username:") %>  
   <%= text_field_tag(:ursername) %><br><br>
   <%= label_tag(:email, "Email:") %>  
@@ -25,7 +25,7 @@
 -->
 
 <!--<h1>New User!<h1> 
-<form accept-charset="UTF-8" action="<%= users_path %>" method="post"> 
+<form accept-charset="UTF-8" action="<%= edit_user_path %>" method="post"> 
   <label for="username">Username:</label>
   <input type="text" id="username" name="user[username]"><br><br>
   <label for="email">Email:</label> <input type="email" id="email" name="user[email]"><br><br> 
