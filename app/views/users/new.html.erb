@@ -9,12 +9,12 @@
   <%= form.submit %>
 <% end %>
 
-<% unless @user.errors.any? %>
-<ul> 
-<% @user.errors.full_messages.each do |error| %>
-<li><%= error %></li>
-<% end %>
-</ul>
+<% if @user.errors.any? %>
+  <ul> 
+    <% @user.errors.full_messages.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <!--
