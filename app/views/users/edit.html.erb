@@ -1,4 +1,4 @@
-<h1>New User<h1>
+<h1>Edit User #<%= @user.id %><h1>
 
 <%= form_with(model: @user, url: user_path, method: "patch") do |form| %>
   <%= form.label :username, "Username:" %>
@@ -10,33 +10,4 @@
   <%= form.submit %>
 <% end %>
 
-<% if @user.errors.any? %>
-  <ul> 
-    <% @user.errors.full_messages.each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-
-<!--<h1>Edit user!<h1>
-<%= form_tag(edit_user_path, method: "get") do %>
-  <%= label_tag(:username, "Username:") %>  
-  <%= text_field_tag(:ursername) %><br><br>
-  <%= label_tag(:email, "Email:") %>  
-  <%= email_field(:email, "") %><br><br>
-  <%= label_tag(:password, "Password:") %>  
-  <%= password_field_tag(:password) %><br><br>
-  <%= submit_tag("Search") %>
-<% end %>
--->
-
-<!--<h1>New User!<h1> 
-<form accept-charset="UTF-8" action="<%= edit_user_path %>" method="post"> 
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="user[username]"><br><br>
-  <label for="email">Email:</label> <input type="email" id="email" name="user[email]"><br><br> 
-  <label for="password">Password:</label> <input type="password" id="password" name="user[password]"><br><br> 
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"> 
-  <input type="submit" value="Submit">
-</form>-->
+<%= render "errors", user: @user %>
