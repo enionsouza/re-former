@@ -2,11 +2,11 @@
 
 # Bare Metal Forms and Helpers
 
-> This is part of the Forms Project in The Odin Project’s Ruby on Rails Curriculum, which is also part of Microvese's Technical Curriculum. To make it, we followed [these tutorial instructions](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/forms).
+> This is part of the Forms Project of The Odin Project’s Ruby on Rails Curriculum, which is also part of Microvese's Technical Curriculum. To make it, we followed [these tutorial instructions](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/forms).
 
-![screenshot](./app/assets/images/forms-advance.png)
+![screenshot](./img/screenshot.png)
 
-This project helped us to actually built some forms, both using nearly-pure HTML and then graduating to using the helper methods that Rails provides.
+This project helped us to actually build some forms, both using nearly-pure HTML and then, gradually, using the helper methods that Rails provides.
 
 ## Built With
 
@@ -29,34 +29,32 @@ For this project, the following environment should be previously installed on yo
 
 ### Setup
 
-- Go to your terminal bash and, on any directory of your preference, run `git clone git@github.com:angelacuahutle/re-former.git`
-- Next, run `cd re-former` to go into the project root directory
-- Run `bundle exec rake webpacker:install` to install all Ruby Gems this project requires
-- Run `rails generate controller` in order to generate UsersController 
+- Go to your terminal bash and, on any directory of your preference, run
+
+```sh
+$ git clone git@github.com:enionsouza/re-former.git
+```
+
+- Next, run `$ cd re-former` to go into the project root directory.
+- Run `$ bundle install` to install all Ruby Gems this project requires.
+- And, finally, to prevent any issue that might eventually come up because of webpacker package, run
+
+```sh
+$ bundle exec rake webpacker:install
+```
 
 ### Install
 
-- Run `rails db:migrate` to migrate the databases needed to run this project
-- Run `rails console` to perform your own tests with your newly created database and their validations, as well! You'll be able to **C**reate, **R**ead, **U**pdate and **D**estroy any records from your tables: authors, posts, and comments. Here you have a simple summary with the most relevant features of each Table and their associations:
+- Run `$ rails db:migrate` to migrate the databases needed to run this project.
+- Run `$ rails server` to start your local host. You can stop your local server pressing `<ctrl> + c` on your keyboard.
+- On the browser of your preference, you can go to http://127.0.0.1:3000/users/new and fill out the form to create your own records (users). Please, note that the validations presented below sould be taken into account.
+- To update (edit) any of your users, please visit [http://127.0.0.1:3000/users/**ID**/edit](http://127.0.0.1:3000/users/1/edit). _IMPORTANT: Please, note that you should change the **ID** in this url to the number of the id of the user you want to edit_.
 
-  #### Authors
+      User (table schema)
 
-      - username:string [unique, 4-12 chars, present]
-      - email:string [unique, present]
-      - password:string [6-16 chars, present]
-      - id:integer
-      - created_at:datetime
-      - updated_at:datetime
-
-      - *has_many posts*
-      - *has_many comments*
-
-  #### Model
-
-User
-  - username:string [present, unique]
-  - email:string [present, unique]
-  - password:string [present, length 6..20]
+      - username:string [present, unique]
+      - email:string [present, unique]
+      - password:string [present, length 6..20]
 
 ## Authors
 
