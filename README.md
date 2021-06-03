@@ -6,7 +6,7 @@
 
 ![screenshot](./img/screenshot.png)
 
-This project helped us to actually build some forms, both using nearly-pure HTML and then, gradually, using the helper methods that Rails provides.
+This project helped us to actually build some forms, both using nearly-pure HTML and then we went through, gradually, using the helper methods that Rails provides. Note that this project doesn't intent to provide any styles to the created views.
 
 ## Built With
 
