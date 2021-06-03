@@ -4,9 +4,9 @@
 
 > This is part of the Forms Project in The Odin Project’s Ruby on Rails Curriculum, which is also part of Microvese's Technical Curriculum. To make it, we followed [these tutorial instructions](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-on-rails/lessons/forms).
 
-![screenshot]()
+![screenshot](./app/assets/images/forms-advance.png)
 
-This project was built in order to learn about forms with Ruby on Rails.
+This project helped us to actually built some forms, both using nearly-pure HTML and then graduating to using the helper methods that Rails provides.
 
 ## Built With
 
@@ -29,9 +29,10 @@ For this project, the following environment should be previously installed on yo
 
 ### Setup
 
-- Go to your terminal bash and, on any directory of your preference, run `git clone git@github.com:angelacuahutle/micro-reddit.git`
-- Next, run `cd micro-reddit` to go into the project root directory
-- Run `bundle install` to install all Ruby Gems this project requires
+- Go to your terminal bash and, on any directory of your preference, run `git clone git@github.com:angelacuahutle/re-former.git`
+- Next, run `cd re-former` to go into the project root directory
+- Run `bundle exec rake webpacker:install` to install all Ruby Gems this project requires
+- Run `rails generate controller` in order to generate UsersController 
 
 ### Install
 
@@ -50,29 +51,12 @@ For this project, the following environment should be previously installed on yo
       - *has_many posts*
       - *has_many comments*
 
-  #### Posts
+  #### Model
 
-      - title:string [unique, present]
-      - body:text [present]
-      - author_id:integer [present]
-      - id:integer
-      - created_at:datetime
-      - updated_at:datetime
-
-      - *belongs_to author*
-      - *has_many comments*
-
-  #### Comments
-
-      - body:text [present]
-      - author_id:integer [present]
-      - post_id:integer [present]
-      - id:integer
-      - created_at:datetime
-      - updated_at:datetime
-
-      - *belongs_to author*
-      - *belongs_to post*
+User
+  - username:string [present, unique]
+  - email:string [present, unique]
+  - password:string [present, length 6..20]
 
 ## Authors
 
