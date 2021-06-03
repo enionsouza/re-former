@@ -6,7 +6,7 @@
 
 ![screenshot](./img/screenshot.png)
 
-This project helped us to actually build some forms, both using nearly-pure HTML and then we went through, gradually, using the helper methods that Rails provides. Note that this project doesn't intent to provide any styles to the created views.
+This project helped us to actually build some forms, first using nearly-pure HTML and then we went through, gradually, using the helper methods that Rails provides. Note that this project doesn't intent to provide any styles to the created views.
 
 ## Built With
 
@@ -74,7 +74,7 @@ $ bundle exec rake webpacker:install
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/angelacuahutle/micro-reddit/issues).
+Feel free to check the [issues page](https://github.com/enionsouza/re-former/issues).
 
 ## Show your support
 
