@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -10,15 +11,15 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to(new_user_path)
     else
-      flash.now[:alert] = @user.errors.full_messages 
-      render :new 
+      flash.now[:alert] = @user.errors.full_messages
+      render :new
     end
   end
 
-  def edit 
+  def edit
     @user = User.find(params[:id])
-  end 
-  
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
@@ -28,9 +29,9 @@ class UsersController < ApplicationController
     end
   end
 
-private 
+  private
+
   def user_params
     params.require(:user).permit(:username, :email, :password)
   end
-
 end
